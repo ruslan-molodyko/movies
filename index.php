@@ -1,10 +1,15 @@
 <?php
+	/*
+	* @license http://www.exmple.com Лицензия
+	* @package command
+	*/
 
+	/*
+	* Подключаем контроллер приложения
+	*/
 	require_once('lib/AppController.php');
 	
-	//Запуск приложения
+	/*
+	* Запускаем приложение!
+	*/
 	AppController::run();
-
-
-	//Test for commit
-	//Test

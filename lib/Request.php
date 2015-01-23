@@ -28,7 +28,7 @@
 		public function set($k,$v){
 			return $this->params[$k] = $v;
 		}
-		
+
 		public function isGet(){
 			return $this->isGet;
 		}
