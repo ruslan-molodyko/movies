@@ -2,33 +2,58 @@
 
 	require_once('App.php');
 
-	//Класс предназначенный для инициализации и запуска приложения   
+	/**
+	 * Предназначенный для инициализации и запуска приложения
+	 * 
+	 * Выполнен на основании шаблона Singleton
+	 * Выступает как точка входа пользовательского запроса
+	 * 
+	 * @package movie.lib
+	 * @author Ruslan Molodyko
+	 */
 	class AppController{
-		
+		/**
+		 * Хранит экземпляр класса
+		 * @var AppController
+		 */
 		static private $instance = null;
 		
+		/**
+		 * Закрытый конструктор для реализации Singleton
+		 */
 		private function __construct(){}
-		
+
+		/**
+		 * Метод для вызова экземпляра класса
+		 * @return AppController
+		 */
 		function getInstance(){
 			if(!self::$instance)
 				self::$instance = new self();
 			return self::$instance;
 		}
-		
+
+		/**
+		 * Метод для запуска приложения
+		 */
 		static public function run(){
 			$controller = AppController::getInstance();
 			$controller->init();
 			$controller->process();
 		}
-		
-		//Инициализация конфигурации
+
+		/**
+		 * Метод для инициализации конфигурации
+		 */
 		function init(){
 			$conf = App::getInstance();
 			$conf->init();
 			spl_autoload_register(array('App','autoload_callback'));
 		}
-		
-		//Запуск контроллера
+
+		/**
+		 * Запуск пользовательского контроллера
+		 */
 		function process(){
 			try{
 				$request = new Request();

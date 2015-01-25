@@ -1,6 +1,11 @@
 <?php
-	
-	//Класс для работы с актерами
+
+	/**
+	 * Класс для работы с актерами
+	 * 
+	 * @package movie.user.controller
+	 * @author Ruslan Molodyko
+	 */
 	class StarController extends Controller{
 		
 		public $defaultAction = 'list';

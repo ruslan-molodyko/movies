@@ -1,5 +1,11 @@
 <?php
-	//Класс для загрузки и распознания файла с данными
+
+	/**
+	 * Класс для загрузки и распознания файла с данными
+	 * 
+	 * @package movie.user.controller
+	 * @author Ruslan Molodyko
+	 */
 	class ParseController extends Controller{
 		
 		public $defaultAction = 'index';

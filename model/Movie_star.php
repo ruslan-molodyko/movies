@@ -1,6 +1,11 @@
 <?php
-	
-	//Модель для работы со связью актера с фильмом
+
+	/**
+	 * Модель для работы со связью актера с фильмом
+	 * 
+	 * @package movie.user.model
+	 * @author Ruslan Molodyko
+	 */
 	class Movie_star extends Model{
 		public $id_movie;
 		public $id_star;

@@ -1,15 +1,17 @@
 <?php
-	/*
-	* @license http://www.exmple.com Лицензия
-	* @package command
-	*/
+	/**
+	 * Файл с которого начинает работу приложение
+	 * 
+	 * @license http://www.exmple.com
+	 * @package movie.file
+	 */
 
-	/*
-	* Подключаем контроллер приложения
-	*/
-	require_once('lib/AppController.php');
+	/**
+	 * Подключаем контроллер приложения
+	 */
+require_once('lib/AppController.php');
 	
-	/*
-	* Запускаем приложение!
-	*/
+	/**
+	 * Запускаем приложение!
+	 */
 	AppController::run();

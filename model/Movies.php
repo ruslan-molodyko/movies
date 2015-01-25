@@ -1,6 +1,11 @@
 <?php
 
-	//Класс для работы с фильмами
+	/**
+	 * Класс для работы с фильмами
+	 * 
+	 * @package movie.user.model
+	 * @author Ruslan Molodyko
+	 */
 	class Movies extends Model{
 		public $title;
 		public $year;

@@ -1,6 +1,11 @@
 <?php
 	
-	//Класс для работы с фильмами
+	/**
+	 * Класс для работы с фильмами
+	 * 
+	 * @package movie.user.controller
+	 * @author Ruslan Molodyko
+	 */
 	class MovieController extends Controller{
 		
 		public $defaultAction = 'list';

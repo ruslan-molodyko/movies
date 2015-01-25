@@ -1,6 +1,11 @@
 <?php
-	
-	//Класс от которого наследуется функционал для пользовательских моделей
+
+	/**
+	 * Класс от которого наследуется функционал для пользовательских моделей
+	 * 
+	 * @package movie.lib
+	 * @author Ruslan Molodyko
+	 */
 	abstract class Model{
 		
 		function __construct(Request $requestInit = null){

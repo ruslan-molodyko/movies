@@ -1,4 +1,14 @@
 <?php
+	/**
+	 * Файл с конфигурацией приложения
+	 * 
+	 * @license http://www.exmple.com
+	 * @package movie.file
+	 */
+
+	/**
+	 * Структура ланных PHP которая хранит данные конфигурации
+	 */
 	return [
 			'path_init_db'=>'mysql:host=localhost;dbname=movie_db',
 			'user_db'=>'root',

@@ -1,9 +1,28 @@
 <?php
-	//Класс предназначенный для генерации экземпляра контроллера и запуска его action методов на основании Request
+
+	/**
+	 * Предназначенный для генерации экземпляра контроллера и запуска его action методов на основании Request
+	 * 
+	 * @package movie.lib
+	 * @author Ruslan Molodyko
+	 * @todo  Добавить поддержку модулей
+	 */
 	class ControllerFactory{
 		
+		/**
+		 * Хранит путь к пользовательским контроллерам относительно базовой директории
+		 * @var string
+		 */
 		static $dirToController = 'controller';
 	
+		/**
+		 * Возвращает экземпляр пользовательского контроллера.
+		 * На основании значения параметра Request::controller
+		 * @param  Request $request Пользовательский запрос
+		 *                          Если свойство Request::controller не верно то возвращается дефолтовый контроллер. 
+		 *                          Имя которого прописано в конфигурации
+		 * @return Controller
+		 */
 		static function getController(Request $request){
 			$controller = empty($request->get('controller')) ? App::get('default_controller') : $request->get('controller');
 			if(!preg_match('/\W/',$controller)){
@@ -19,7 +38,15 @@
 			}
 			throw new Exception("Контроллер {$controller} не найден");
 		}
-		
+
+		/**
+		 * Вызывает action метод пользовательского контроллера.
+		 * На основании значения параметра Request::controller и Request::action
+		 * @param  Request $request Пользовательский запрос
+		 *                          Если свойство Request::action не верно то запускается дефолтовый action метод. 
+		 *                          Имя которого прописано в пользовательском контроллере
+		 * @return void
+		 */
 		static function runAction(Request $request){
 			$class = self::getController($request);
 			$action = empty($request->get('action')) ? $class->getDefaultAction() : strtolower($request->get('action')).'Action';
